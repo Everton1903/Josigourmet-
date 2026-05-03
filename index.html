@@ -11,6 +11,7 @@
             --marrom-escuro: #4b2e1e;
             --marrom-claro: #7f5539;
             --creme: #f5ebe0;
+            --creme-escuro: #e6ccb2; /* Nova cor para o cabeçalho */
             --bege-claro: #edede9;
             --branco-leite: #ffffff;
         }
@@ -22,39 +23,67 @@
 
         body { background-color: var(--bege-claro); color: var(--marrom-escuro); line-height: 1.6; }
 
-        /* Header e Menu de Navegação Seccionado */
+        /* Header Ajustado com Fundo Creme Escuro */
         header { 
-            background: var(--branco-leite); 
-            padding: 1rem 5%; 
+            background: var(--creme-escuro); 
+            padding: 0 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             border-bottom: 3px solid var(--marrom-claro);
             position: sticky; top: 0; z-index: 1000;
+            height: 80px;
         }
-        .logo { font-size: 1.6rem; font-weight: bold; color: var(--marrom-escuro); font-style: italic; }
         
+        .logo {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a { 
-            margin-left: 15px; 
+            margin-left: 20px; 
             text-decoration: none; 
             color: var(--marrom-escuro); 
             font-weight: 600; 
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
             text-transform: uppercase;
+            transition: 0.3s;
+            white-space: nowrap;
         }
-        nav a:hover { color: var(--marrom-claro); }
+
+        nav a:hover { 
+            color: var(--branco-leite); /* Destaque no hover para combinar com o fundo escuro */
+        }
 
         /* Seção: Início (Hero) */
         .hero { 
             height: 80vh; 
-            background: linear-gradient(rgba(75, 46, 30, 0.6), rgba(75, 46, 30, 0.6)), 
-                        url('https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
-            background-size: cover; background-position: center; 
-            display: flex; flex-direction: column; justify-content: center; 
-            align-items: center; text-align: center; color: var(--creme); padding: 0 20px; 
+            background: linear-gradient(rgba(75, 46, 30, 0.5), rgba(75, 46, 30, 0.5)), 
+                        url('https://i.postimg.cc/28M6M4QK/1777779837866.png'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            color: var(--creme); 
+            padding: 0 20px; 
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
         .btn-principal { 
             background-color: var(--marrom-escuro); 
@@ -85,9 +114,9 @@
         .insta-link { color: var(--creme); text-decoration: none; font-size: 1.1rem; font-weight: bold; }
         
         @media (max-width: 768px) {
-            header { flex-direction: column; padding: 1rem; }
-            nav { margin-top: 15px; }
-            nav a { margin: 0 8px; font-size: 0.8rem; }
+            header { height: auto; padding: 10px; flex-direction: column; }
+            .logo img { height: 60px; margin-bottom: 10px; }
+            nav a { margin: 5px 8px; font-size: 0.75rem; }
             .hero h1 { font-size: 2.2rem; }
         }
     </style>
@@ -95,12 +124,14 @@
 <body>
 
     <header>
-        <div class="logo">Josi Doces Gourmet</div>
+        <div class="logo">
+            <img src="https://i.postimg.cc/NM00hLSz/27752-(4).png" alt="Josi Doces Gourmet Logo">
+        </div>
         <nav>
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre Nós</a>
             <a href="#diferenciais">Diferenciais</a>
-            <a href="https://everton1903.github.io/Josi-Doces-Gourmet/" target="_blank" style="color: var(--marrom-claro);">Cardápio</a>
+            <a href="https://everton1903.github.io/Josi-Doces-Gourmet/" target="_blank">Cardápio</a>
         </nav>
     </header>
 
